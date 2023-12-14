@@ -1,0 +1,33 @@
+<div class="card">
+  <div class="card-header">
+    <div class="row">
+      <div class="col">
+        <h2 class="h4">Posts</h2>
+      </div>
+      <div class="col text-end">
+        <button data-bs-toggle="modal" data-bs-target="#addPostModal" class="btn btn-sm btn-primary">Add Post</button>
+      </div>
+    </div>
+  </div>
+  <div class="card-body">
+    <div class="row">
+      <div *ngFor="let post of posts; let index = index;" class="col-sm-12 col-lg-6 mb-4">
+        <div class="card">
+          <div class="card-header">
+            <h5 class="card-title">{{ post.title }}</h5>
+          </div>
+          <div class="card-body">
+            <p class="card-text">{{ post.body.substring(0,150) }}...</p>
+            <p class="card-text"><small class="text-body-secondary">Last updated 3 mins ago</small></p>
+          </div>
+          <div class="card-footer text-end">
+            <a [routerLink]="['/posts', post.id]" class="btn btn-sm btn-dark mx-4">View</a>
+            <button data-bs-toggle="modal" attr.data-bs-target="#addPostModal{{post.id}}" class="btn btn-sm btn-dark">Edit</button>
+          </div>
+          <post-form [post]="post"></post-form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<post-form></post-form>

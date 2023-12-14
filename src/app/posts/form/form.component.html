@@ -1,0 +1,34 @@
+<div class="modal" tabindex="-1" id="addPostModal{{ post?.id }}">
+  <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable modal-lg">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title"> {{ post ? 'Edit' : 'Add' }} Post</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <div class="row p-3">
+          <div class="col-12 p-1">
+            <label for="grid-title" class="form-label">Title</label>
+            <input type="text" name="" [value]="post?.title" id="grid-title" class="form-control form-control-sm">
+          </div>
+          <div class="col-12 p-1">
+            <label for="grid-excerpt" class="form-label">Excerpt</label>
+            <textarea name="" id="grid-excerpt" cols="30" rows="10" class="form-control form-control-sm">{{post?.body}}</textarea>
+          </div>
+          <div class="col-12 p-1">
+            <label for="grid-status">Status</label>
+            <select name="" id="grid-status" class="form-select form-select-sm">
+              <option value="">Unpublished</option>
+              <option value="">Published</option>
+              <option value="">Archived</option>
+            </select>
+          </div>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary">Save</button>
+      </div>
+    </div>
+  </div>
+</div>

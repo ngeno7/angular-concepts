@@ -1,0 +1,12 @@
+<div class="card">
+    <div class="card-header">
+        <h1 class="h3">{{ post?.title }}</h1>
+    </div>
+    <div class="card-body">
+        <p>{{ post?.body }}</p>
+        <span class="badge rounded-pill text-bg-info mx-4">{{ post?.tags }}</span>
+    </div>
+    <div class="card-footer text-end">
+        <a routerLink="/posts" class="btn btn-sm btn-primary">Back to blogs</a>
+    </div>
+</div>
